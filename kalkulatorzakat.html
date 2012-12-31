@@ -1,0 +1,236 @@
+<html>
+<head>
+<style type="text/css">
+input{
+  text-align:right;
+}
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="kalkulator.js"></script>
+<script type="text/javascript" src="accounting.min.js"></script>
+</head>
+<body>
+<h1>Kalkulator Zakat</h1>
+<h2>ZAKAT HARTA YANG TELAH TERSIMPAN SATU TAHUN</h2>
+<form>
+<table>
+<tr>
+<td>
+<label for="pribadi_uang">
+a. Uang Tunai, Tabungan, Deposito atau Sejenisnya
+</label>
+</td>
+<td>
+Rp<input type="text" name="pribadi_uang" id="pribadi_uang" class="input_pribadi" value="0"/>
+</td>
+</tr>
+
+
+<tr>
+<td>
+<label for="pribadi_saham">
+b. Saham atau surat-surat berharga lainnya
+</label>
+</td>
+<td>
+Rp<input type="text" name="pribadi_saham" id="pribadi_saham" class="input_pribadi" value="0"/>
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="pribadi_realestate">
+c. Real Estate (tidak termasuk rumah tinggal yang dipakai sekarang)
+</label>
+</td>
+<td>
+Rp<input type="text" name="pribadi_realestate" id="pribadi_realestate" class="input_pribadi" value="0"/>
+</td>
+</tr>
+
+
+<tr>
+<td>
+<label for="pribadi_emas">
+d. Emas, Perak, Permata atau sejenisnya
+</label>
+</td>
+<td>
+Rp<input type="text" name="pribadi_emas" id="pribadi_emas" class="input_pribadi" value="0"/>
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="pribadi_mobil">
+e. Mobil (lebih dari keperluan pekerjaan anggota keluarga)
+</label>
+</td>
+<td>
+Rp<input type="text" name="pribadi_mobil" id="pribadi_mobil" class="input_pribadi" value="0"/>
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="pribadi_jumlah">
+f. Jumlah Harta Simpanan (A+B+C+D+E)	
+</label>
+</td>
+<td>
+Rp<input type="text" name="pribadi_jumlah" id="pribadi_jumlah" value="0" readonly/>
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="pribadi_hutang">
+g. Hutang Pribadi yg jatuh tempo dalam tahun ini	
+</label>
+</td>
+<td>
+Rp<input type="text" name="pribadi_hutang" id="pribadi_hutang" value="0"/>
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="pribadi_harta_zakat">
+h. Harta simpanan kena zakat(F-G, jika > nisab)	
+</label>
+</td>
+<td>
+Rp<input type="text" name="pribadi_harta_zakat" id="pribadi_harta_zakat" value="0"/>
+</td>
+</tr>
+
+<tr>
+<td>
+<strong>
+<label for="pribadi_zakat">
+I. JUMLAH ZAKAT ATAS SIMPANAN YANG WAJIB DIBAYARKAN PER TAHUN (2,5% x H)	
+</label>
+</strong>
+</td>
+<td>
+Rp<input type="text" name="pribadi_zakat" id="pribadi_zakat" value="0" readonly/>
+</td>
+</tr>
+</table>
+</form>
+
+<h2>Zakat Harta Usaha<h2>
+<form>
+<table>
+<tr>
+<td>
+<label for="perusahaan_nilai">
+j. Nilai Kekayaan Perusahaan (termasuk uang tunai, simpanan di bank, real estate, alat produksi, inventori, barang jadi, dll)	
+</label>
+</td>
+<td>
+Rp<input type="text" name="perusahaan_nilai" id="perusahaan_nilai" class="input_usaha" value="0"/>
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="perusahaan_utang">
+k. Utang Perusahaan jatuh tempo	
+</label>
+</td>
+<td>
+Rp<input type="text" name="perusahaan_utang" id="perusahaan_utang" class="input_usaha" value="0"/>
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="perusahaan_prosentase">
+l. Komposisi kepemilikan (dalam persen)	
+</label>
+</td>
+<td>
+<input type="text" name="perusahaan_prosentase" id="perusahaan_prosentase" class="input_usaha" value="100"/>%
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="perusahaan_bersih">
+m. Jumlah Bersih Harta Usaha (k% x [i-j])
+</label>
+</td>
+<td>
+Rp<input type="text" name="perusahaan_bersih_usaha" id="perusahaan_bersih_usaha" value="0"/>
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="perusahaan_harta_zakat">
+n. Harta usaha kena zakat (u, jika > nisab)	
+</label>
+</td>
+<td>
+Rp<input type="text" name="perusahaan_harta_zakat" id="perusahaan_harta_zakat" value="0"/>
+</td>
+</tr>
+
+<tr>
+<td>
+<strong>
+<label for="perusahaan_zakat">
+W. JUMLAH ZAKAT ATAS HARTA USAHA YANG WAJIB DIBAYARKAN PER TAHUN (2,5% X v)	
+</label>
+</strong>
+</td>
+<td>
+Rp<input type="text" name="perusahaan_zakat" id="perusahaan_zakat" value="0"/>
+</td>
+</tr>
+
+</table>
+</form>
+
+
+<table>
+<tr>
+<td>
+<strong>
+TOTAL ZAKAT YANG HARUS DIBAYARKAN (I+W)	
+</strong>
+</td>
+
+<td>
+Rp<input type="text" name="total_zakat" id="total_zakat" value="0"/>
+</td>
+</tr>
+</table>
+
+<h2>PERHITUNGAN NISAB</h2>
+<form>
+<table>
+<tr>
+<td>
+<label for="harga_emas">
+o. Harga Emas Murni Saat ini per Gram	
+</td>
+<td>
+Rp<input type="text" name="harga_emas" id="harga_emas" value="490000"/>
+</td>
+</tr>
+<tr>
+<td>
+Besarnya Nisab (z x 85 gram emas)
+</td>
+<td>
+<input type="text" name="nisab" id="nisab" readonly>
+</td>
+</tr>
+</table>
+</form>
+
+</body>
+</html>
