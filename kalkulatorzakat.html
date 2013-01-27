@@ -13,13 +13,84 @@ input{
 </head>
 <body>
 <h1>Kalkulator Zakat</h1>
-<h2>ZAKAT HARTA YANG TELAH TERSIMPAN SATU TAHUN</h2>
+<h2>Zakat Emas dan Perak</h2>
+<form>
+<table>
+<tr>
+<td>
+<label for="berat_emas">
+A. Berat emas
+</label>
+</td>
+<td>
+<input type="text" name="berat_emas" id="berat_emas" value="0"/> gram
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="zakat_emas_gram">
+B. Emas yang harus dizakatkan
+</label>
+</td>
+<td>
+<input type="text" name="zakat_emas_gram" id="zakat_emas_gram" value="0"/> gram atau senilai Rp <input type="text" name="zakat_emas_uang" id="zakat_emas_uang"  value="0"/>
+</td>
+</tr>
+
+
+<tr>
+<td>
+<label for="berat_perak">
+C. Berat perak
+</label>
+</td>
+<td>
+<input type="text" name="berat_perak" id="berat_perak" value="0"/> gram
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="zakat_perak_gram">
+D. Perak yang harus dizakatkan
+</label>
+</td>
+<td>
+<input type="text" name="zakat_perak_gram" id="zakat_perak_gram" value="0"/> gram atau senilai Rp <input type="text" name="zakat_perak_uang" id="zakat_perak_uang" value="0"/>
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="jumlah_emas">
+<strong>E. JUMLAH NILAI ZAKAT EMAS DAN PERAK YANG HARUS DIZAKATKAN</strong>&nbsp;&nbsp;&nbsp;
+</label>
+</td>
+<td>
+Rp <input type="text" name="jumlah_emas" id="jumlah_emas" value="0"/> 
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="checkbox" name="bayar_emas" id="bayar_emas" checked/> Bayar dengan uang
+</td>
+<td>
+&nbsp;</td>
+</tr>
+
+</table>
+</form>
+
+
+<h2>Zakat Mata Uang dan Penghasilan</h2>
 <form>
 <table>
 <tr>
 <td>
 <label for="pribadi_uang">
-A. Uang Tunai, Tabungan, Deposito atau Sejenisnya
+F. Uang Tunai, Tabungan, Deposito atau Sejenisnya
 </label>
 </td>
 <td>
@@ -31,7 +102,7 @@ Rp<input type="text" name="pribadi_uang" id="pribadi_uang" class="input_pribadi"
 <tr>
 <td>
 <label for="pribadi_realestate">
-B. Piutang (yang diharapkan pelunasannya di periode ini)
+G. Piutang (yang diharapkan pelunasannya di periode ini)
 </label>
 </td>
 <td>
@@ -42,7 +113,7 @@ Rp<input type="text" name="pribadi_realestate" id="pribadi_realestate" class="in
 <tr>
 <td>
 <label for="pribadi_emas">
-C. Emas, Perak, Permata atau sejenisnya
+H. Emas, Perak, Permata atau sejenisnya
 </label>
 </td>
 <td>
@@ -53,7 +124,7 @@ Rp<input type="text" name="pribadi_emas" id="pribadi_emas" class="input_pribadi"
 <tr>
 <td>
 <label for="pribadi_saham">
-D. Saham yang tidak diperdagangkan,
+I. Saham yang tidak diperdagangkan,
 </label>
 </td>
 <td>
@@ -77,7 +148,7 @@ Sejumlah <input type="text" name="lembar_saham" id="lembar_saham" value="0"> lem
 <tr>
 <td>
 <label for="pribadi_jumlah">
-E. Jumlah Harta Simpanan (A+B+C+D)	
+J. Jumlah Harta Simpanan (F+G+H+I)	
 </label>
 </td>
 <td>
@@ -88,7 +159,7 @@ Rp<input type="text" name="pribadi_jumlah" id="pribadi_jumlah" value="0" readonl
 <tr>
 <td>
 <label for="pribadi_hutang">
-F. Hutang Pribadi yg jatuh tempo dalam tahun ini	
+K. Hutang Pribadi yg jatuh tempo dalam tahun ini	
 </label>
 </td>
 <td>
@@ -99,7 +170,7 @@ Rp<input type="text" name="pribadi_hutang" id="pribadi_hutang" value="0"/>
 <tr>
 <td>
 <label for="pribadi_harta_zakat">
-G. Harta simpanan kena zakat(E-F, jika > nisab)	
+L. Harta simpanan kena zakat(J-K, jika > nisab)	
 </label>
 </td>
 <td>
@@ -111,7 +182,7 @@ Rp<input type="text" name="pribadi_harta_zakat" id="pribadi_harta_zakat" value="
 <td>
 <strong>
 <label for="pribadi_zakat">
-H. JUMLAH ZAKAT ATAS SIMPANAN YANG WAJIB DIBAYARKAN PER TAHUN (2,5% x G)	
+M. JUMLAH ZAKAT ATAS SIMPANAN YANG WAJIB DIBAYARKAN PER TAHUN (2,5% x L)	
 </label>
 </strong>
 </td>
@@ -129,7 +200,7 @@ Rp<input type="text" name="pribadi_zakat" id="pribadi_zakat" value="0" readonly/
 <tr>
 <td>
 <label for="perusahaan_nilai">
-I. Nilai Kekayaan Perusahaan (termasuk uang tunai, simpanan di bank, real estate, alat produksi, inventori, barang jadi, dll)	
+N. Nilai kekayaan usaha <br/>(termasuk uang tunai, simpanan di bank, alat produksi, inventori, barang jadi, produk yang diperdagangkan, dll) 
 </label>
 </td>
 <td>
@@ -140,7 +211,7 @@ Rp<input type="text" name="perusahaan_nilai" id="perusahaan_nilai" class="input_
 <tr>
 <td>
 <label for="perusahaan_utang">
-J. Utang Perusahaan jatuh tempo	
+O. Hutang Perusahaan jatuh tempo	
 </label>
 </td>
 <td>
@@ -151,18 +222,18 @@ Rp<input type="text" name="perusahaan_utang" id="perusahaan_utang" class="input_
 <tr>
 <td>
 <label for="perusahaan_prosentase">
-K. Komposisi kepemilikan (dalam persen)	
+P. Komposisi kepemilikan (dalam persen)	
 </label>
 </td>
 <td>
-<input type="text" name="perusahaan_prosentase" id="perusahaan_prosentase" class="input_usaha" value="100"/>%
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="perusahaan_prosentase" id="perusahaan_prosentase" style="width:50" class="input_usaha" value="100"/> %
 </td>
 </tr>
 
 <tr>
 <td>
 <label for="perusahaan_bersih">
-L. Jumlah Bersih Harta Usaha (k% x [i-j])
+Q. Jumlah Bersih Harta Usaha (P% x [N-O])
 </label>
 </td>
 <td>
@@ -173,7 +244,7 @@ Rp<input type="text" name="perusahaan_bersih_usaha" id="perusahaan_bersih_usaha"
 <tr>
 <td>
 <label for="perusahaan_harta_zakat">
-M. Harta usaha kena zakat (u, jika > nisab)	
+R. Harta usaha kena zakat (Q, jika > nisab)	
 </label>
 </td>
 <td>
@@ -185,7 +256,7 @@ Rp<input type="text" name="perusahaan_harta_zakat" id="perusahaan_harta_zakat" v
 <td>
 <strong>
 <label for="perusahaan_zakat">
-N. JUMLAH ZAKAT ATAS HARTA USAHA YANG WAJIB DIBAYARKAN PER TAHUN (2,5% X v)	
+S. JUMLAH ZAKAT ATAS HARTA USAHA YANG WAJIB DIBAYARKAN PER TAHUN (2,5% X R)	
 </label>
 </strong>
 </td>
@@ -202,7 +273,7 @@ Rp<input type="text" name="perusahaan_zakat" id="perusahaan_zakat" value="0"/>
 <tr>
 <td>
 <strong>
-TOTAL ZAKAT YANG HARUS DIBAYARKAN (I+W)	
+TOTAL ZAKAT YANG HARUS DIBAYARKAN (E+M+S)	
 </strong>
 </td>
 
@@ -212,21 +283,21 @@ Rp<input type="text" name="total_zakat" id="total_zakat" value="0"/>
 </tr>
 </table>
 
-<h2>PERHITUNGAN NISAB</h2>
+<h2>Perhitungan Nisab</h2>
 <form>
 <table>
 <tr>
 <td>
 <label for="harga_emas">
-o. Harga Emas Murni Saat ini per Gram	
+T. Harga Emas Murni Saat ini per Gram	
 </td>
 <td>
-Rp<input type="text" name="harga_emas" id="harga_emas" value="490000"/>
+Rp<input type="text" name="harga_emas" id="harga_emas" value="580000"/>
 </td>
 </tr>
 <tr>
 <td>
-Besarnya Nisab (z x 85 gram emas)
+U. Besarnya Nisab (z x 85 gram emas)
 </td>
 <td>
 <input type="text" name="nisab" id="nisab" readonly>
