@@ -9,13 +9,17 @@ $(document).ready(function(){
       calculate_simpanan();
       calculate_total_zakat();
   });
+  
+  $('#lembar_saham, #harga_saham, #dividen, #aset_pasif, input[name=jenis_saham]').change(function(){
+      calculate_saham();
+  });
 
   $('.input_usaha').change(function(){
       calculate_zakat_usaha();
       calculate_total_zakat();
   });
 
-  $('input').change(function(){
+  $('input[type=text]').change(function(){
       var new_val = accounting.formatMoney($(this).val(), { symbol: "",  format: "%v" }); 
       $(this).val(new_val);
   });
@@ -23,7 +27,7 @@ $(document).ready(function(){
 });
 
 function change_to_formatmoney(){
-  $('input').each(function(){
+  $('input[type=text]').each(function(){
       var new_val = accounting.formatMoney($(this).val(), { symbol: "",  format: "%v" }); 
       $(this).val(new_val);
   });
@@ -35,6 +39,21 @@ function calculate_pribadi(){
       sum+=parseInt(accounting.unformat($(this).val()));   
   });
   $('#pribadi_jumlah').val(accounting.formatMoney(sum, { symbol: "",  format: "%v" }));
+}
+
+function calculate_saham(){
+  var saham=0;
+  var lembar = parseInt(accounting.unformat($('#lembar_saham').val()));
+  var harga = parseInt(accounting.unformat($('#harga_saham').val()));
+  var aset = parseInt(accounting.unformat($('#aset_pasif').val()));
+  var dividen = parseInt(accounting.unformat($('#dividen').val()));
+  var jenis = $('input[name=jenis_saham]:checked').val()
+  if (jenis=="dagang") saham = lembar*harga;
+  else if (jenis=="jasa") saham = dividen;
+  else if (jenis=="produksi") saham = lembar*harga-aset;
+  $('#pribadi_saham').val(accounting.formatMoney(saham, { symbol: "",  format: "%v" }));
+  calculate_pribadi();
+  calculate_simpanan();
 }
 
 function calculate_simpanan(){
