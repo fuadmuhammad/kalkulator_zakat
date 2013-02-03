@@ -1,8 +1,7 @@
 $(document).ready(function(){
-  var nisab = 85*parseInt($('#harga_emas').val());
-  $('#nisab').val(nisab);
+  load_emas_perak();
 
-  change_to_formatmoney();
+//  change_to_formatmoney();
 
   $('.input_pribadi, #pribadi_hutang').change(function(){
       calculate_pribadi();
@@ -25,6 +24,17 @@ $(document).ready(function(){
   });
 
 });
+
+function load_emas_perak(){
+    $.getJSON("https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=jsondict&name=emas_perak&query=select%20*%20from%20%60swdata%60%20limit%2010",function(data){
+    $('#harga_emas').val(data[0].emas);
+    $('#harga_perak').val(data[0].perak);
+    var nisab = 85*parseInt($('#harga_emas').val());
+    $('#nisab').val(nisab);
+    change_to_formatmoney();
+});
+}
+
 
 function change_to_formatmoney(){
   $('input[type=text]').each(function(){
