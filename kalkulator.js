@@ -12,7 +12,12 @@ $(document).ready(function(){
   $('#lembar_saham, #harga_saham, #dividen, #aset_pasif, input[name=jenis_saham]').change(function(){
       calculate_saham();
   });
-
+  
+  $('#berat_emas, #berat_perak, #bayar_emas').change(function(){
+      calculate_logam();
+      calculate_total_zakat();
+  });
+  
   $('.input_usaha').change(function(){
       calculate_zakat_usaha();
       calculate_total_zakat();
@@ -49,6 +54,22 @@ function calculate_pribadi(){
       sum+=parseInt(accounting.unformat($(this).val()));   
   });
   $('#pribadi_jumlah').val(accounting.formatMoney(sum, { symbol: "",  format: "%v" }));
+}
+
+function calculate_logam(){
+    var brt_emas = parseInt(accounting.unformat($('#berat_emas').val()));
+    var brt_perak = parseInt(accounting.unformat($('#berat_perak').val()));
+    var harga_emas = parseInt(accounting.unformat($('#harga_emas').val()))
+    var harga_perak = parseInt(accounting.unformat($('#harga_perak').val()))
+    if (brt_emas >= 85) var ze = brt_emas*2.5/100;
+    else ze = 0;
+    $('#zakat_emas_gram').val(ze);
+    $('#zakat_emas_uang').val(accounting.formatMoney(harga_emas*ze, { symbol: "",  format: "%v" }));
+    if (brt_perak >= 595) var zp = brt_perak*2.5/100;
+    else zp = 0;
+    $('#zakat_perak_gram').val(zp);
+    $('#zakat_perak_uang').val(accounting.formatMoney(harga_perak*zp, { symbol: "",  format: "%v" }));
+    $('#jumlah_emas').val(accounting.formatMoney((harga_emas*ze)+(harga_perak*zp), { symbol: "",  format: "%v" }));
 }
 
 function calculate_saham(){
@@ -99,8 +120,10 @@ function calculate_zakat_usaha(){
 }
 
 function calculate_total_zakat(){
+   var logam_zakat = 0;
+   if ($('#bayar_emas').is(":checked")) logam_zakat = parseInt(accounting.unformat($('#jumlah_emas').val()));  
    var perusahaan_zakat = parseInt(accounting.unformat($('#perusahaan_zakat').val())); 
    var pribadi_zakat = parseInt(accounting.unformat($('#pribadi_zakat').val())); 
-   var total_zakat = pribadi_zakat + perusahaan_zakat;
+   var total_zakat = logam_zakat + pribadi_zakat + perusahaan_zakat;
    $('#total_zakat').val(accounting.formatMoney(total_zakat, { symbol: "",  format: "%v" }));   
 }
