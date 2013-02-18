@@ -1,3 +1,19 @@
+h1 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #121212;
+    font-weight: 700px;
+    font-size: 4.75em;
+    line-height: 1em;
+    letter-spacing: -2px;
+}
+
+h2 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #121212;
+    font-weight: 700px;
+    font-size: 1.35em;
+}
+
 table {
 	color: #7F7F7F;
     width: 100%;
@@ -7,8 +23,6 @@ table {
 
 table,caption {
 	margin: 0;
-	border-right: 1px solid #CCC;
-	border-left: 1px solid #CCC
 }
 
 caption,th,td {
@@ -58,6 +72,9 @@ tbody tr:hover a {
 	background-color: #FFF
 }
 
+tbody td {
+    width: 60%
+}
 
 tbody td+td+td+td a:active,tbody td+td+td+td a:hover,tbody td+td+td+td a:focus,tbody td+td+td+td a:visited {
 	color: #E63C1E
