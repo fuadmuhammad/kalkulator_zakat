@@ -32,7 +32,7 @@ A. Berat emas
 <tr>
 <td>
 <label for="zakat_emas_gram">
-B. Emas yang harus dizakatkan (jika > nisab)
+B. Emas yang harus dizakatkan (jika > nisab, yaitu 85 gram)
 </label>
 </td>
 <td>
@@ -55,7 +55,7 @@ C. Berat perak
 <tr>
 <td>
 <label for="zakat_perak_gram">
-D. Perak yang harus dizakatkan (jika > nisab)
+D. Perak yang harus dizakatkan (jika > nisab, yaitu 595 gram)
 </label>
 </td>
 <td>
@@ -114,19 +114,8 @@ G. Piutang (yang diharapkan pelunasannya di periode ini)
 
 <tr>
 <td>
-<label for="pribadi_emas">
-H. Emas, Perak, Permata atau sejenisnya
-</label>
-</td>
-<td>
-<span class="currency">Rp</span><input type="text" name="pribadi_emas" id="pribadi_emas" class="input_pribadi" value="0"/>
-</td>
-</tr>
-
-<tr>
-<td>
 <label for="pribadi_saham">
-I. Saham yang tidak diperdagangkan,
+H. Saham yang tidak diperdagangkan,
 </label>
 </td>
 <td>
@@ -139,7 +128,7 @@ I. Saham yang tidak diperdagangkan,
 <td>
 
 Sejumlah <input type="text" name="lembar_saham" id="lembar_saham" value="0"> lembar, 
-<br>seharga Rp <input type="text" name="harga_saham" id="harga_saham" value="0"> perlembar, 
+<br>seharga Rp <input type="text" name="harga_saham" id="harga_saham" value="0"> per lembar, 
 <br>dalam bidang usaha: <br>
 <input type="radio" name="jenis_saham" value="jasa" checked/>Jasa, dengan jumlah dividen <input type="text" name="dividen" id="dividen" value="0"><br>
 <input type="radio" name="jenis_saham" value="produksi" />Produksi, dengan nilai aset perusahaan yang tidak diperjual belikan sebesar <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rp <input type="text" name="aset_pasif" id="aset_pasif" value="0"><br>
@@ -154,7 +143,7 @@ Sejumlah <input type="text" name="lembar_saham" id="lembar_saham" value="0"> lem
 <tr>
 <td>
 <label for="pribadi_jumlah">
-J. Jumlah Harta Simpanan (F+G+H+I)	
+I. Jumlah Harta Simpanan (F+G+H)	
 </label>
 </td>
 <td>
@@ -165,7 +154,7 @@ J. Jumlah Harta Simpanan (F+G+H+I)
 <tr>
 <td>
 <label for="pribadi_hutang">
-K. Hutang Pribadi yg jatuh tempo dalam tahun ini	
+J. Hutang Pribadi yg jatuh tempo dalam tahun ini	
 </label>
 </td>
 <td>
@@ -176,7 +165,7 @@ K. Hutang Pribadi yg jatuh tempo dalam tahun ini
 <tr>
 <td>
 <label for="pribadi_harta_zakat">
-L. Harta simpanan kena zakat(J-K, jika > nisab)	
+K. Harta simpanan kena zakat(I-J, jika > nisab)	
 </label>
 </td>
 <td>
@@ -188,7 +177,7 @@ L. Harta simpanan kena zakat(J-K, jika > nisab)
 <td>
 <strong>
 <label for="pribadi_zakat">
-M. JUMLAH ZAKAT ATAS SIMPANAN YANG WAJIB DIBAYARKAN PER TAHUN (2,5% x L)	
+L. JUMLAH ZAKAT ATAS SIMPANAN YANG WAJIB DIBAYARKAN PER TAHUN (2,5% x K)	
 </label>
 </strong>
 </td>
@@ -206,7 +195,7 @@ M. JUMLAH ZAKAT ATAS SIMPANAN YANG WAJIB DIBAYARKAN PER TAHUN (2,5% x L)
 <tr>
 <td>
 <label for="perusahaan_nilai">
-N. Nilai kekayaan usaha (termasuk uang tunai, simpanan di bank, alat produksi, inventori, barang jadi, produk yang diperdagangkan, dll) 
+M. Nilai kekayaan usaha (termasuk uang tunai, simpanan di bank, alat produksi, inventori, barang jadi, produk yang diperdagangkan, dll) 
 </label>
 </td>
 <td>
@@ -217,7 +206,7 @@ N. Nilai kekayaan usaha (termasuk uang tunai, simpanan di bank, alat produksi, i
 <tr>
 <td>
 <label for="perusahaan_utang">
-O. Hutang Perusahaan jatuh tempo	
+N. Hutang Perusahaan jatuh tempo	
 </label>
 </td>
 <td>
@@ -228,7 +217,7 @@ O. Hutang Perusahaan jatuh tempo
 <tr>
 <td>
 <label for="perusahaan_prosentase">
-P. Komposisi kepemilikan (dalam persen)	
+O. Komposisi kepemilikan (dalam persen)	
 </label>
 </td>
 <td>
@@ -239,7 +228,7 @@ P. Komposisi kepemilikan (dalam persen)
 <tr>
 <td>
 <label for="perusahaan_bersih">
-Q. Jumlah Bersih Harta Usaha (P% x [N-O])
+P. Jumlah Bersih Harta Usaha (P% x [M-N])
 </label>
 </td>
 <td>
@@ -250,7 +239,7 @@ Q. Jumlah Bersih Harta Usaha (P% x [N-O])
 <tr>
 <td>
 <label for="perusahaan_harta_zakat">
-R. Harta usaha kena zakat (Q, jika > nisab)	
+Q. Harta usaha kena zakat (P, jika > nisab)	
 </label>
 </td>
 <td>
@@ -262,7 +251,7 @@ R. Harta usaha kena zakat (Q, jika > nisab)
 <td>
 <strong>
 <label for="perusahaan_zakat">
-S. JUMLAH ZAKAT ATAS HARTA USAHA YANG WAJIB DIBAYARKAN PER TAHUN (2,5% X R)	
+R. JUMLAH ZAKAT ATAS HARTA USAHA YANG WAJIB DIBAYARKAN PER TAHUN (2,5% X Q)	
 </label>
 </strong>
 </td>
@@ -279,7 +268,7 @@ S. JUMLAH ZAKAT ATAS HARTA USAHA YANG WAJIB DIBAYARKAN PER TAHUN (2,5% X R)
 <tr>
 <td>
 <strong>
-TOTAL ZAKAT YANG HARUS DIBAYARKAN (E+M+S)	
+TOTAL ZAKAT YANG HARUS DIBAYARKAN (E+L+R)	
 </strong>
 </td>
 
@@ -295,7 +284,7 @@ TOTAL ZAKAT YANG HARUS DIBAYARKAN (E+M+S)
 <tr>
 <td>
 <label for="harga_emas">
-T. Harga Emas Murni Saat ini per Gram	
+S. Harga Emas Murni Saat ini per Gram (sumber: kontan.co.id)
 </td>
 <td>
 <span class="currency">Rp</span><input type="text" name="harga_emas" id="harga_emas" readonly/>
@@ -303,7 +292,7 @@ T. Harga Emas Murni Saat ini per Gram
 </tr>
 <tr>
 <td>
-U. Harga Perak Murni Saat ini per Gram
+T. Harga Perak Murni Saat ini per Gram (sumber: kontan.co.id)
 </td>
 <td>
 <span class="currency">Rp</span><input type="text" name="harga_perak" id="harga_perak" readonly/>
@@ -311,7 +300,7 @@ U. Harga Perak Murni Saat ini per Gram
 </tr>
 <tr>
 <td>
-V. Besarnya Nisab (T x 85 gram emas)
+U. Besarnya Nisab (S x 85 gram emas)
 </td>
 <td>
 <span class="currency">Rp</span><input type="text" name="nisab" id="nisab" readonly/>
