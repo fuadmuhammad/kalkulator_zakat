@@ -1,6 +1,8 @@
 $(document).ready(function(){
   load_emas_perak();
 
+  $( "#accordion" ).accordion();
+  $( "#tabs" ).tabs();
 //  change_to_formatmoney();
 
   $('.input_pribadi, #pribadi_hutang').change(function(){

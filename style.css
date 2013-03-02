@@ -1,7 +1,3 @@
-#wrapper{
-    margin: 20px 40px;
-}
-
 h1 {
     font-family: 'Open Sans Condensed', sans-serif;
     color: #121212;
@@ -18,6 +14,30 @@ h2 {
     font-size: 1.35em;
 }
 
+#header {
+    float:left;
+}
+
+#head-left {
+    float: left;
+    width: 30%;
+}
+
+#head-right {
+    float: right;
+    width: 55%;
+    line-height: 1.3em;
+}
+
+#head-right td {
+	border-left: 0;
+	padding: 5px
+}
+
+form {
+    float: left;
+}
+
 table {
 	color: #7F7F7F;
     width: 100%;
@@ -29,7 +49,7 @@ table,caption {
 	margin: 0;
 }
 
-caption,th,td {
+form caption,th,td {
 	border-left: 0;
 	padding: 10px
 }
@@ -63,59 +83,32 @@ tbody a {
 	border-bottom: 1px dotted #E63C1E
 }
 
-tbody a:active,tbody a:hover,tbody a:focus,tbody a:visited {
+form tbody a:active,tbody a:hover,tbody a:focus,tbody a:visited {
 	color: #666
 }
 
-tbody tr:hover {
+form tbody tr:hover {
 	background-color: #EEE;
 	color: #333
 }
 
-tbody tr:hover a {
+form tbody tr:hover a {
 	background-color: #FFF
 }
 
-tbody td {
-    width: 50%
+form tbody td {
+    width: 60%
 }
 
-tbody td+td+td+td a:active,tbody td+td+td+td a:hover,tbody td+td+td+td a:focus,tbody td+td+td+td a:visited {
+form  tbody td+td+td+td a:active,tbody td+td+td+td a:hover,tbody td+td+td+td a:focus,tbody td+td+td+td a:visited {
 	color: #E63C1E
 }
 
-tbody a:visited:after {
+form  tbody a:visited:after {
 	font-family: Verdana,sans-serif;
 	content: "\00A0\221A"
 }
 
-label {
-    position: relative;
-    clear: left;
-    float: left;
-    margin-right: 5px;
-}
-
-label span {
-    position: absolute;
-    left: -10000px;
-    top: 0px;
-}
-
-input[type=text] {
-    padding: 5px;
-    font-size: 1.4em;
-    border: 1px solid #493F0B;
-    color: #1E1903;
-    background: #F5F6D4;
-    width: 210px;
-}
-
-span.currency {
-    width: 20px;
-    float: left;
-    margin-top: 8px;
-}
-input.weight {
-    margin-left: 20px;
+div {
+	width:100%;
 }
