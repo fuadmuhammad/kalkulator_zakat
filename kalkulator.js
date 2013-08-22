@@ -33,13 +33,14 @@ $(document).ready(function(){
 });
 
 function load_emas_perak(){
-    $.getJSON("https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=jsondict&name=emas_perak&query=select%20*%20from%20%60swdata%60%20limit%2010",function(data){
-    $('#harga_emas').val(data[0].emas);
-    $('#harga_perak').val(data[0].perak);
-    var nisab = 85*parseInt($('#harga_emas').val());
-    $('#nisab').val(nisab);
-    change_to_formatmoney();
-});
+    //$.getJSON("https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=jsondict&name=emas_perak&query=select%20*%20from%20%60swdata%60%20limit%2010",function(data){
+		$.getJSON("https://free-ec2.scraperwiki.com/giuqkai/721cfd562ff74af/sql/?q=select%20%0A%09id%2C%0A%09emas%2C%0A%09perak%0Afrom%20swdata%0Alimit%201%0A",function(data){
+		$('#harga_emas').val(data[0].emas);
+		$('#harga_perak').val(data[0].perak);
+		var nisab = 85*parseInt($('#harga_emas').val());
+		$('#nisab').val(nisab);
+		change_to_formatmoney();
+	});
 }
 
 
